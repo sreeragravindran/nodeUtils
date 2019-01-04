@@ -1,0 +1,22 @@
+{
+  "name": "node-utils",
+  "version": "1.0.0",
+  "description": "utility functions for nodejs ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sreeragravindran/nodeUtils.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sreeragravindran/nodeUtils/issues"
+  },
+  "homepage": "https://github.com/sreeragravindran/nodeUtils#readme",
+  "dependencies": {
+    "line-by-line": "^0.1.6"
+  }
+}
