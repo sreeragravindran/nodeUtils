@@ -7,9 +7,8 @@ var fs = require('fs');
 var reader; 
 var consumer;  
 var list = [];
-var chunkSize = 200; 
 
-function streamChunks(_filePath, _consumer){
+function streamChunks(_filePath, _consumer, _chunkSize = 200){
 
     consumer = _consumer;
 
@@ -17,17 +16,14 @@ function streamChunks(_filePath, _consumer){
 
     reader.on('line', function(line){
         list.push(line);
-        if(list.length == chunkSize) {
+        if(list.length == _chunkSize) {
             pauseReading();
             consumer.collectChunk(list, callbackForNextChunk);      
         }
-        //consumer.collect(line);
-        //console.log(line);
         
     })
 
     reader.on("end", function(){
-        //console.log("end of file!");
         if(list.length > 0){
             consumer.collectChunk(list, consumer.onCompletionCallback);
         } else {
@@ -38,15 +34,9 @@ function streamChunks(_filePath, _consumer){
     
     reader.on("pause", function(){
         console.log("paused reading !");
-        // if(list.length > 0){
-        //     //console.log("paused: end of chunk");
-        //     consumer.collectChunk(list, callbackForNextChunk);               
-        // }
     })
 
     function callbackForNextChunk(message){
-        //console.log("chuck completed");
-        //console.log(message);
         list = [];
         resumeReading();
     }

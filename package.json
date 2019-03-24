@@ -4,7 +4,7 @@
   "description": "utility functions for nodejs ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,9 @@
   "homepage": "https://github.com/sreeragravindran/nodeUtils#readme",
   "dependencies": {
     "line-by-line": "^0.1.6"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2"
   }
 }
