@@ -6,6 +6,9 @@
   "scripts": {
     "test": "mocha"
   },
+  "bin": {
+    "svs": "bin/svs"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sreeragravindran/nodeUtils.git"
@@ -17,7 +20,9 @@
   },
   "homepage": "https://github.com/sreeragravindran/nodeUtils#readme",
   "dependencies": {
-    "line-by-line": "^0.1.6"
+    "line-by-line": "^0.1.6",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.4.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
